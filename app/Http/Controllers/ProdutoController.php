@@ -9,8 +9,9 @@ use App\Models\Produto;
 class ProdutoController extends Controller
 {
     public function index (Request $request){
+        //criando array data
         $data = [];
-
+        // pegando os Produto
         $listaProdutos = Produto::all();
         $data["lista"] = $listaProdutos;
 
@@ -53,10 +54,21 @@ class ProdutoController extends Controller
 
     }
     public function usercarrinho(Request $request){
-        //buscando sessão do carrinho
+        //buscando sessão do carrinho 
         $carrinho = session('cart', []);
+        $data = ['cart' => $carrinho];
         
-        return view('carrinho', $data);
+        return view("carrinho", $data);
+    }
+    // excluir o carrinho
+    public function carrinho_excluir(Request $request, $indice){
+        $carrinho = session('cart', []);
+        if(isset($carrinho[$indice])){
+            unset($carrinho[$indice]);
+
+        }
+        session(["cart" => $carrinho]);
+        return redirect()->route("user_carrinho");
     }
     
 }

@@ -12,7 +12,7 @@ class RModel extends Model
     protected $primaryKey = "id";
     public $timestamps= true;
     public $incrementing = true;
-    protected $fillable = []; // vai guarda o model
+    protected $fillable = []; // vai guarda o modelo
 
     public function beforesave(){
         return true;
@@ -26,6 +26,7 @@ class RModel extends Model
         return parent::save($options);
 
     }catch(\Exception $e){
+        // caso for falso vai manda menssagem de erro
 
             throw new \Exception( $e.getMessege());
         

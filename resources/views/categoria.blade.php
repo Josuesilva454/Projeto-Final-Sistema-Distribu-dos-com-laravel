@@ -8,12 +8,7 @@
        @foreach($listaCategoria as $cat)
        <a href="{{ route('categoria_por_id', ['idcategoria' => $cat->id]) }} " class="list-group-item list-group-item-action list-group-item-dark
         @if($cat->id === $idcategoria) active @endif"> {{ $cat->categoria }} </a>
-
-       <style>
-          #list-group-item{
-            right:500px
-          }
-          </style>
+        
        @endforeach
          </ul>
     </div>
