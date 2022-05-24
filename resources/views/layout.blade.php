@@ -47,10 +47,12 @@
       
       <div class="container">
           <div class="row">
+            
              <!--  Nesta div teremos uma área que os arquivos vai adicionar conteudo  -->
              @yield("conteudo")
               </div>
-      </div>
+
+
       
 
 </body>

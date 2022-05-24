@@ -1,7 +1,7 @@
 @extends("layout")
 @section("conteudo")
     <div class="col-12">
-    <h2>Cadaste-se</h2>
+    <h2>Cadastre-se</h2>
     </div>
     <form action= "{{route('cadastrar_cliente')}}" method= "post">
     @csrf  <!-- Adicionando token  -->
@@ -29,7 +29,7 @@
 <div class="col-6">
 <div class="mb-3">
   <label for="formGroupExampleInput2" class="form-label">Senha</label>
-  <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Senha" name= "passoword">
+  <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Senha" name= "password">
 </div>
 </div>
 <div class="col-6">
