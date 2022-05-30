@@ -16,12 +16,12 @@ return new class extends Migration
         Schema::create('enderecos', function (Blueprint $table) {
             $table->increments("id");
 
-            $table->String("logragouro" );
-            $table->String("numero");
-            $table->String("cidade");
-            $table->String("estado");
+            $table->String("logragouro" )->nullable();
+            $table->String("numero")>nullable();
+            $table->String("cidade")>nullable();
+            $table->String("estado")>nullable();
             $table->String("cep");
-            $table->String("complemento");
+            $table->String("complemento")>nullable();
 
             $table->integer("usuario_id")
             ->unsigned();
