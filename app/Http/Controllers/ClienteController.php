@@ -23,7 +23,7 @@ class ClienteController extends Controller
         $usuario->login = $request->input("cpf", "");
 
         $senha = $request->input("password", "");
-        $usuario->login = \Hash::make($senha); //Criptografa
+        $usuario->password = \Hash::make($senha); //Criptografa
 
         $endereco = new Endereco ($values);
         $endereco->logradouro = $request->input("endereco", "");
@@ -31,8 +31,15 @@ class ClienteController extends Controller
 
        $clienteService = new ClienteService();
       $result = $clienteService->SalvarUsuario($usuario, $endereco);
-       dd($result);
+        
+        $message = $result["message"];
+        $status = $result["status"];
+
+        $request->session()->flash($status, $message);
+         
+
         return redirect()->route('cadastrar');
     }
 }
+
 

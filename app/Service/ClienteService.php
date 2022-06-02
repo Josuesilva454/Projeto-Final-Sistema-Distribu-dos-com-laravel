@@ -1,4 +1,4 @@
-?php
+<?php
 
 namespace App\Service;
 
@@ -9,26 +9,29 @@ use Log;
 
 class ClienteService
 {
-    public function SalvarCliente(Usuario $usuario, Endereco $endereco){      
+    public function SalvarUsuario(Usuario $user, Endereco $endereco){      
         //salvar usuário
     try {
-         $dbUsuario = Usuario::where("login", $usuario->login)->first();
+         $dbUsuario = Usuario::where("login", $user->login)->first();
          if($dbUsuario){
-         return (' lOGIN ja CADASTRADO COM SUCESSO!');
+         return ['status' => 'ok', 'message' => 'login ja cadastrado!'];
              
          }
+         
         //code...
         \DB::beginTransaction(); //Iniciar a transações
-        $usuario->save();//salva usuario
-        $endereco->usuario_id = $usuario->id;//Relaciona com as tabelas
+        $user->save();//salva usuario
+        $endereco->usuario_id = $user->id;//Relaciona com as tabelas
         $endereco->save();//salvar endereço
         \DB::commit(); //confirmando a transação  
-        return (' Usuário cadastrado com sucesso!');
+        return ['status' => 'ok', 'message' => ' Usuário cadastrado com sucesso!'];
   } catch (\Exception $e) {
-    throw $e;
-     
+    \Log::error("ERRO", ['file' => 'ClienteService.SalvarUsuario',
+    'message' => $e->getMessege()]);
+
       \DB::rollback(); //Cancelar a transação
-      return('Usuário não pode cadastar');
+
+      return ['status' => 'err', 'message' => "Usuário não pode cadastar"];
   }
  }
  }   

@@ -2,6 +2,7 @@
 use App\Http\Controllers\ClienteController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProdutoController;
+use App\Http\Controllers\UsuarioController;
 
 /*
 |--------------------------------------------------------------------------
@@ -42,6 +43,9 @@ Route::match(['get', 'post'],'/cadastrar', [ClienteController::class,'cadastrar'
 
 Route::match(['get', 'post'],'cliente/cadastrar', [ClienteController::class,'cadastrarCliente'])
 ->name ("cadastrar_cliente");
+
+Route::match(['get', 'post'],'/logar', [UsuarioController::class,'logar'])
+->name ("logar");
 
 // rotas excluir
 Route::match(['get', 'post'],'/{indice}/excluircarrinho', [ClienteController::class,'excluirCarrinho'])
