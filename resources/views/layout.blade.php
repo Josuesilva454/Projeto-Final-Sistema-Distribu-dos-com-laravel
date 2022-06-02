@@ -33,6 +33,10 @@
                   <a class="nav-link" href="{{ route('cadastrar') }}">Cadastrar</a>
                 </li>
 
+                <li class="nav-item">
+                  <a class="nav-link" href="{{ route('logar') }}">Login</a>
+                </li>
+
               </ul>
           </div>
         </div>
@@ -46,6 +50,19 @@
       
       <div class="container">
           <div class="row">
+
+          @if($message = Session::get("err"))
+          <div class="col-12">
+            <div class= "alert alert-danger">{{ $message }}</div>
+           </div>
+            @endif
+
+            @if($message = Session::get("ok"))
+          <div class="col-12">
+            <div class= "alert alert-sucess">{{ $message }}</div>
+           </div>
+            @endif
+
             
              <!--  Nesta div teremos uma área que os arquivos vai adicionar conteudo  -->
              @yield("conteudo")
