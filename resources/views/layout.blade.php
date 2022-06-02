@@ -57,7 +57,7 @@
 
           @if(\Auth::user())
             <div class="col-12">
-            <p class = "text-right"> Seja Bem vindo, {{ \Auth::user()->nome}}, <a href="{{ route('sair'}}"> sair </p>
+            <p class = "text-right"> Seja Bem vindo,  {{ \Auth::user()->nome }}, <a href="{{ route('sair'}}"> sair </p>
             </div>
           @endif
 
