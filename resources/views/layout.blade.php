@@ -32,11 +32,15 @@
                 <li class="nav-item">
                   <a class="nav-link" href="{{ route('cadastrar') }}">Cadastrar</a>
                 </li>
-
+                @if(!\Auth::user())
                 <li class="nav-item">
                   <a class="nav-link" href="{{ route('logar') }}">Login</a>
                 </li>
-
+                @else
+                <li class="nav-item">
+                  <a class="nav-link" href="{{ route('logar') }}">Logout</a>
+                </li>
+                @endif
               </ul>
           </div>
         </div>
@@ -50,6 +54,12 @@
       
       <div class="container">
           <div class="row">
+
+          @if(\Auth::user())
+            <div class="col-12">
+            <p class = "text-right"> Seja Bem vindo, {{ \Auth::user()->nome}}, <a href="{{ route('sair'}}"> sair </p>
+            </div>
+          @endif
 
           @if($message = Session::get("err"))
           <div class="col-12">

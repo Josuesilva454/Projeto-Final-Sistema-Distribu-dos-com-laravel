@@ -16,13 +16,14 @@ class UsuarioController extends Controller
         $login = $request->input("login");
         $senha = $request->input("senha");
 
-        $crendential = ['login' => $login, 'passweord' => $senha];
+        $crendential = ['login' => $login, 'password' => $senha];
 
         //logar
     if(Auth::attempt($crendential)){
-      dd("logado");
+      return redirect()->route("home");
     }else {
-       dd("Dados invalido logado");
+       $request->session()->flash("err", "Usuário/ senha inválido");
+       return redirect()->route("logar");
     }
     }
 

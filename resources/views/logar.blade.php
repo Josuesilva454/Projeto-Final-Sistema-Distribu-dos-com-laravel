@@ -14,7 +14,6 @@
       @csrf
       <input type="text" name="login"  placeholder= "Nome">
       <br>  </br>
-      <form action="{{ route('logar'}}" method="post">
 
       <input type="password" name="senha" placeholder= "senha">
       <br>  </br>

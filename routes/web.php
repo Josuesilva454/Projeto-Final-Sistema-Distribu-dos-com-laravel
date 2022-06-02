@@ -47,6 +47,11 @@ Route::match(['get', 'post'],'cliente/cadastrar', [ClienteController::class,'cad
 Route::match(['get', 'post'],'/logar', [UsuarioController::class,'logar'])
 ->name ("logar");
 
+
+Route::get('/sair', [UsuarioController::class,'sair'])
+->name ("sair");
+
+
 // rotas excluir
 Route::match(['get', 'post'],'/{indice}/excluircarrinho', [ClienteController::class,'excluirCarrinho'])
 ->name ("carrinho_excluir");
