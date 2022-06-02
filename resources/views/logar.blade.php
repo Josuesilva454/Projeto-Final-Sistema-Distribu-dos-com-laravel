@@ -3,12 +3,17 @@
      
      <style>
         body{
-            font-family:Arial, Helvetica, sans-serif;
-            background-image: blue;
+            font-family:Arial, Helvetica, sans-serif; 
+        }
+          .login-tela{
+           background-color: rgba(0,0,0, 0.8);
+           position: absolute;
+          
+
         }
      </style> 
      <body>
-     <div>
+     <div class= "login-tela">
        <h1> Login </h1>
        <form action="{{ route('logar')}}" method="post">
       @csrf
@@ -24,3 +29,4 @@
    
 
      @endsection
+     
