@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use App\Models\Usuario;
 use App\Models\Endereco;
 use Illuminate\Http\Request;
+use App\Service\ClienteService;
 
 class ClienteController extends Controller
 {
@@ -28,22 +29,9 @@ class ClienteController extends Controller
         $endereco->logradouro = $request->input("endereco", "");
     
 
-
-        try {
-            \DB::beginTransaction(); //Iniciar a transações
-            $usuario->save();//salva usuario
-            $endereco->usuario_id = $usuario->id;//Relaciona com as tabelas
-            $endereco->save();//salvar endereço
-            \DB::commit(); //confirmando a transação
-            throw new \Exception( "erro na menssagem");
-
-        } 
-      
-        catch(\Exception $e){
-           //trata o erro
-           \DB::rollback(); //Cancelar a transação
-        }
-       
+       $clienteService = new ClienteService();
+      $result = $clienteService->SalvarUsuario($usuario, $endereco);
+       dd($result);
         return redirect()->route('cadastrar');
     }
 }
