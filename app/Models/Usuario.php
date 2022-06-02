@@ -2,11 +2,35 @@
 
 namespace App\Models;
 
+use Illuminate\Contracts\Auth\Authenticatable;
 
 
-class Usuario extends RModel
+
+class Usuario extends RModel implements Authenticatable
 {
      // adicionado Usuários
     protected $table = "usuarios";
     protected $fillable= ['email', 'login', 'password', 'nome'];
+
+    public function getAuthIdentifierName(){
+     return $this->getKey();
+    }
+
+    public function getAuthIdentifier(){
+        return $this->login;
+    }
+    public function getAuthPassword(){
+      return $this->password;
+    }
+    public function getRememberToken(){
+
+
+    }
+    public function setRememberToken($value){
+
+    }
+    public function getRememberTokenName(){
+
+    }
+ 
 }
