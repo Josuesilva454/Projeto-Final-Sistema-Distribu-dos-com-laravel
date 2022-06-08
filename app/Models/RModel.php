@@ -28,7 +28,7 @@ class RModel extends Model
     }catch(\Exception $e){
         // caso for falso vai manda menssagem de erro
 
-            throw new \Exception( $e.getMessege());
+           
         
     }
 

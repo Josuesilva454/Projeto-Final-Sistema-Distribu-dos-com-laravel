@@ -35,6 +35,10 @@ Route::match(['get', 'post'],'/{idproduto}/carrinho/adicionar', [ProdutoControll
 Route::match(['get', 'post'],'/carrinho', [ProdutoController::class, 'usercarrinho'])
 ->name ("user_carrinho");
 
+// rotas excluir
+Route::match(['get', 'post'],'/{indice}/excluircarrinho', [ClienteController::class,'excluirCarrinho'])
+->name ("carrinho_excluir");
+
 //cadastrar
 
 Route::match(['get', 'post'],'/cadastrar', [ClienteController::class,'cadastrar'])
@@ -52,9 +56,7 @@ Route::get('/sair', [UsuarioController::class,'sair'])
 ->name ("sair");
 
 
-// rotas excluir
-Route::match(['get', 'post'],'/{indice}/excluircarrinho', [ClienteController::class,'excluirCarrinho'])
-->name ("carrinho_excluir");
+
 
 
 
