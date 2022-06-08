@@ -4,7 +4,7 @@
     @if(isset($listaCategoria)&& count($listaCategoria) > 0 )
     <div class ="list-group">
    
-    <a href="{{ route('categoria') }} " class="list-group-item list-group-item-action list-group-item-dark   @if(0 === $idcategoria) active @endif"> Todas</a>
+    <a href="{{ route('categoria') }} " class="list-group-item list-group-item-action list-group-item-dark   @if(0 === $idcategoria) active @endif "> Todas</a>
        @foreach($listaCategoria as $cat)
        <a href="{{ route('categoria_por_id', ['idcategoria' => $cat->id]) }} " class="list-group-item list-group-item-action list-group-item-dark
         @if($cat->id === $idcategoria) active @endif"> {{ $cat->categoria }} </a>
@@ -16,8 +16,6 @@
     </div>
 
     <div class ="col-10">
-
-
     @include("produtos", ['$lista' => $lista])
 </div>          
    @endsection
