@@ -17,11 +17,11 @@ return new class extends Migration
             $table->increments("id");
 
             $table->String("logragouro" )->nullable();
-            $table->String("numero")>nullable();
-            $table->String("cidade")>nullable();
-            $table->String("estado")>nullable();
+            $table->String("numero")->nullable();
+            $table->String("cidade")->nullable();
+            $table->String("estado")->nullable();
             $table->String("cep");
-            $table->String("complemento")>nullable();
+            $table->String("complemento")->nullable();
 
             $table->integer("usuario_id")
             ->unsigned();

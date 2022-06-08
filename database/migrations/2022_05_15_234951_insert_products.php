@@ -15,6 +15,17 @@ return new class extends Migration
     {
        $cat = new \App\Models\Categoria(['categoria'=>'Geral' ]);
        $cat->save();
+       $cat = new \App\Models\Categoria(['categoria'=>'Masculino' ]);
+       $cat->save();
+
+       $cat = new \App\Models\Categoria(['categoria'=>'Feminino' ]);
+       $cat->save();
+
+       $cat = new \App\Models\Categoria(['categoria'=>'Sapato' ]);
+       $cat->save();
+
+       $cat = new \App\Models\Categoria(['categoria'=>'Infantil' ]);
+       $cat->save();
 
        $prod1 = new \App\Models\Produto(['nome' => 'Camisa Blusa Camiseta Masculina Gola V Estampa Jesus Cristo', 'valor' => 25, 'foto' => 'images/Produto.jpg', 'descricao' => '','categoria_id' => $cat->id ]);
        $prod1->save();
