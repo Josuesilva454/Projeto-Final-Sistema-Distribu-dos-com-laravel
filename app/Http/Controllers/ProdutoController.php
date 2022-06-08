@@ -61,7 +61,7 @@ class ProdutoController extends Controller
         return view("carrinho", $data);
     }
     // excluir o carrinho
-    public function carrinho_excluir(Request $request, $indice){
+    public function excluirCarrinho(Request $request, $indice){
         $carrinho = session('cart', []);
         if(isset($carrinho[$indice])){
             unset($carrinho[$indice]);
@@ -72,4 +72,5 @@ class ProdutoController extends Controller
     }
     
 }
+
 

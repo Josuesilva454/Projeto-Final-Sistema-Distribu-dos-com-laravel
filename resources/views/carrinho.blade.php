@@ -25,7 +25,7 @@
           </td>
           <!-- Adicionando intem dos produtos  -->
           <td>{{ $p ->nome }}<td>
-            <td><img src ="{{ asset($p->foto) }}" height="500"> </td>
+            <td><img src ="{{ asset($p->foto) }}" height="50"> </td>
           <td>{{ $p->valor}}</td>
           <td>{{ $p->descricao}}</td>
       </tr>
