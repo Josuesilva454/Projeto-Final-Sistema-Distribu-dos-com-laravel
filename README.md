@@ -1,7 +1,7 @@
 # Laravel 8
 Banco de dados - mysql
 
-#Instalação
+# Instalação
 Instale as dependencias com o composer
 
 composer update
