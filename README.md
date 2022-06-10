@@ -2,6 +2,10 @@
 Banco de dados - mysql
 
 # Instalação
-Instale as dependencias com o composer
+Instale as dependências com o composer
 
 composer update
+
+# Subir o servidor
+
+php artisan serve
