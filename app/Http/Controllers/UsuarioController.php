@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Auth;
+use  Illuminate\Support\Facades\Auth;
 
 class UsuarioController extends Controller
 {
@@ -15,6 +15,7 @@ class UsuarioController extends Controller
         //SE ENTRAR NESTE IF É PORQUE O USUÁRIO CLICOU NO BOTÃO LOGAR
         $login = $request->input("login");
         $senha = $request->input("senha");
+       
 
         $crendential = ['login' => $login, 'password' => $senha];
 

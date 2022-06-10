@@ -27,7 +27,7 @@ class ClienteService
         return ['status' => 'ok', 'message' => ' Usuário cadastrado com sucesso!'];
   } catch (\Exception $e) {
     \Log::error("ERRO", ['file' => 'ClienteService.SalvarUsuario',
-    'message' => $e->getMessege()]);
+    'message' => $e->getMessage()]);
 
       \DB::rollback(); //Cancelar a transação
 

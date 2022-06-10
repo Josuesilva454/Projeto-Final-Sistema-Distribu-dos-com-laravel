@@ -3,7 +3,6 @@ use App\Http\Controllers\ClienteController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProdutoController;
 use App\Http\Controllers\UsuarioController;
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -36,7 +35,7 @@ Route::match(['get', 'post'],'/carrinho', [ProdutoController::class, 'usercarrin
 ->name ("user_carrinho");
 
 // rotas excluir
-Route::match(['get', 'post'],'/{indice}/excluircarrinho', [ClienteController::class,'excluirCarrinho'])
+Route::match(['get', 'post'],'/{indice}/excluircarrinho', [ProdutoController::class,'excluirCarrinho'])
 ->name ("carrinho_excluir");
 
 //cadastrar

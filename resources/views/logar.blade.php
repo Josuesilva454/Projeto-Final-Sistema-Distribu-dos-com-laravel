@@ -1,6 +1,6 @@
 @extends("layout")
      @section("conteudo")
-     
+
      <style>
         body{
     background-color: aliceblue ;
@@ -55,10 +55,8 @@ padding-top: 40px;
     .btn button:hover{
         background-image: linear-gradient( right, #4536, red, black);
 
-
     }
-
-
+    
 
      </style> 
      <body>
@@ -68,11 +66,11 @@ padding-top: 40px;
       @csrf
       <div class="card-group">
       <label> CPF </label>
-      <input type="text" name="login"  placeholder= "Digite seu cpf">
+      <input type="text" name="login"  placeholder= "Digite seu cpf" />
     </div>
       <div class="card-group">
       <label> Senha </label>
-      <input type="password" name="senha" placeholder= "Digite sua senha">
+      <input type="password" name="senha" placeholder= "Digite sua senha"/>
       </div>
          <button> Entrar </button>
     </form>

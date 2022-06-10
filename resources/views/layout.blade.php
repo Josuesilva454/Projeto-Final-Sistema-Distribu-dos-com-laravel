@@ -4,12 +4,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Loja vITUAL</title>
+    <title>Loja Virtual</title>
 
     <!-- Chamada do CSS em Bootstrap-->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    @yield("script.js")
-    
+    @yield("scriptjs")
 
     <!-- criando CSS para estilos internos na nossa página-->
 </head>
@@ -33,13 +32,9 @@
                   <a class="nav-link" href="{{ route('cadastrar') }}">Cadastrar</a>
                 </li>
                 @if(!\Auth::user())
-                <li class="nav-item">
                   <a class="nav-link" href="{{ route('logar') }}">Login</a>
-                </li>
-                @else
-                <li class="nav-item">
+         
                   <a class="nav-link" href="{{ route('logar') }}">Logout</a>
-                </li>
                 @endif
               </ul>
           </div>
@@ -57,9 +52,9 @@
 
           @if(\Auth::user())
             <div class="col-12">
-            <p class = "text-right"> Seja Bem vindo,  {{ \Auth::user()->nome }}, <a href="{{ route('sair')}}"> sair </p>
+            <p class = "text-right"> Seja Bem vindo,  {{ \Auth::user()->nome }} <a href = "{{route('sair')}}"> sair </a></p>
             </div>
-          @endif
+         @endif
 
           @if($message = Session::get("err"))
           <div class="col-12">
@@ -76,10 +71,7 @@
             
              <!--  Nesta div teremos uma área que os arquivos vai adicionar conteudo  -->
              @yield("conteudo")
-              </div>
-
-
-      
+                 </div>
 
 </body>
 </html>
